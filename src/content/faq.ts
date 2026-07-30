@@ -25,7 +25,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: "Quels sont les horaires ?",
-    a: "Le Forum se tient le jeudi 1ᵉʳ octobre 2026, de 8h30 à 18h00. L'accueil des participants débute dès 8h00.",
+    a: "Le Forum se tient le jeudi 1ᵉʳ octobre 2026, de 8h30 à 18h. L'accueil des participants débute dès 8h00.",
   },
   {
     q: "Le déjeuner est-il prévu ?",

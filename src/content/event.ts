@@ -19,9 +19,9 @@ export const event = {
   dateLabel: "Jeudi 1ᵉʳ octobre 2026",
   /** ISO avec fuseau — cible du compte à rebours (ouverture 8h30, +02:00 CEST). */
   dateISO: "2026-10-01T08:30:00+02:00",
-  hoursLabel: "8h30 – 18h00",
+  hoursLabel: "8h30 – 18h",
   welcomeLabel: "Accueil à partir de 8h00",
-  scheduleLabel: "Jeudi 1ᵉʳ octobre 2026 · 8h30 – 18h00",
+  scheduleLabel: "Jeudi 1ᵉʳ octobre 2026 · 8h30 – 18h",
 
   // Lieu
   venue: "Villa Quai Sturm",

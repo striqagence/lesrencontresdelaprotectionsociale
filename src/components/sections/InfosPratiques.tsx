@@ -100,7 +100,7 @@ export default function InfosPratiques() {
                 label="Date & horaires"
                 title={event.dateLabel}
               >
-                <Detail accent="turquoise">De 8h30 à 18h00</Detail>
+                <Detail accent="turquoise">De 8h30 à 18h</Detail>
                 <Detail accent="turquoise">Accueil à partir de 8h00</Detail>
               </InfoCard>
             </Reveal>
