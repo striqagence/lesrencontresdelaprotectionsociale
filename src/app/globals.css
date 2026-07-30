@@ -1,26 +1,150 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------ */
+/*  Design tokens — charte « Forum de la Protection Sociale »          */
+/*  Source de vérité : assets/CHARTE GRAPHIQUE_FORUM_PS.pdf            */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Palette */
+  --color-brand: #273582; /* Bleu marque : titres, header/footer, fonds foncés */
+  --color-brand-dark: #1b2160; /* Fin des dégradés footer/contact */
+  --color-magenta: #c02a87; /* CTA, accents, hovers */
+  --color-violet: #735092; /* Accents secondaires, institutions */
+  --color-violet-mid: #8e2f86; /* Milieu des dégradés hero/CTA */
+  --color-turquoise: #00a3bf; /* Accents, losanges, pilier 01 */
+  --color-turquoise-light: #9fe3ec; /* Sur-titres sur fond foncé */
+  --color-cream: #faf8f4; /* Fond général de page */
+  --color-ink: #2a2540; /* Texte de base (body) */
+  --color-body: #574f6e; /* Paragraphes courants */
+  --color-muted: #9a93a8; /* Mentions, légendes */
+  --color-muted-2: #8a8298;
+  --color-muted-3: #9a93b8; /* Footer bas */
+  --color-lavender: #c9c3e4; /* Texte sur fond bleu */
+  --color-lavender-2: #e4e1f0;
+  --color-tag-turquoise: #0e7a8c;
+  --color-tag-violet: #5a3d73;
+
+  /* Typographie */
+  --font-sans: var(--font-roboto-condensed), system-ui, sans-serif;
+
+  /* Rayons */
+  --radius-pill: 999px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
   }
 }
 
+/* ------------------------------------------------------------------ */
+/*  Base                                                                */
+/* ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+  /* offset des ancres sous le header sticky */
+  scroll-padding-top: 120px;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  /* ⚠️ Piège handoff : overflow-x:hidden casse position:sticky.
+     Utiliser `clip` sur body uniquement. */
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Focus visible cohérent sur tous les éléments interactifs (a11y) */
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline: 2.5px solid var(--color-magenta);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Décor flottant du hero / bandeau CTA */
+.animate-floaty-slow {
+  animation: floaty 9s ease-in-out infinite;
+}
+.animate-floaty-fast {
+  animation: floaty 11s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Reveal au scroll (piloté par le composant <Reveal>)                */
+/* ------------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 24px)) scale(var(--reveal-scale, 1));
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal[data-revealed="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Cartes « lift » — élévation au survol + ombre teintée par accent   */
+/*  Les ombres dépendant de l'accent, elles sont passées en variables. */
+/* ------------------------------------------------------------------ */
+.lift-card {
+  box-shadow: var(--card-shadow, none);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+.lift-card:hover {
+  transform: translateY(var(--lift, -6px));
+  box-shadow: var(--card-shadow-hover, var(--card-shadow, none));
+}
+
+/* Carte de créneau du programme : survol = élévation + outline magenta.
+   (outline plutôt que border/shadow, comme dans le handoff.) */
+.prog-card {
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+.prog-card:hover {
+  transform: translateY(-6px);
+  outline: 2.5px solid #c02a87;
+  outline-offset: 3px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  prefers-reduced-motion : on coupe animations et reveals            */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-floaty-slow,
+  .animate-floaty-fast {
+    animation: none !important;
+  }
+  .lift-card,
+  .prog-card {
+    transition: none;
+  }
+  .lift-card:hover,
+  .prog-card:hover {
+    transform: none;
+  }
 }
