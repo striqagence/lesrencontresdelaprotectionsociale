@@ -44,7 +44,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "validation" }, { status: 422 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
+  // Accepte les deux nommages (RESEND_API_KEY conventionnel, ou RESEND).
+  const apiKey = process.env.RESEND_API_KEY ?? process.env.RESEND;
 
   // Pas de clé (dev) : on trace et on répond OK sans envoyer.
   if (!apiKey) {
