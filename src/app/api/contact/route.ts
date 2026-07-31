@@ -17,7 +17,7 @@ import { Resend } from "resend";
 const TO = process.env.CONTACT_TO ?? "contact@alsaceprotectionsociale.fr";
 const FROM =
   process.env.CONTACT_FROM ??
-  "Forum de la Protection Sociale <contact@rencontres-ps.fr>";
+  "Forum de la Protection Sociale <noreply@rencontres-ps.fr>";
 
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
