@@ -15,14 +15,15 @@ const robotoCondensed = Roboto_Condensed({
   display: "swap",
 });
 
+// Meta description (~155 caractères, longueur optimale pour Google)
 const description =
-  "Le rendez-vous alsacien de la protection sociale et de la retraite. " +
-  "1ʳᵉ édition le jeudi 1ᵉʳ octobre 2026 à la Villa Quai Sturm, Strasbourg.";
+  "Le rendez-vous alsacien de la protection sociale, de la retraite et de la " +
+  "prévoyance. 1ʳᵉ édition le 1ᵉʳ octobre 2026 à Strasbourg — réservez votre place.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${event.domain}`),
   title: {
-    default: "Forum de la Protection Sociale · 1ᵉʳ octobre 2026 · Strasbourg",
+    default: "Forum de la Protection Sociale — 1ᵉʳ octobre 2026, Strasbourg",
     template: "%s · Forum de la Protection Sociale",
   },
   description,
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Forum de la Protection Sociale · 1ᵉʳ octobre 2026 · Strasbourg",
+    title: "Forum de la Protection Sociale — 1ᵉʳ octobre 2026, Strasbourg",
     description,
     images: ["/images/banniere-rencontres.png"],
   },

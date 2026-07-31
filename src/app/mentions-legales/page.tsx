@@ -102,11 +102,17 @@ export default function MentionsLegales() {
           <Block accent={at(0)} title="Éditeur du site">
             <p>
               Le site <strong className="text-brand">{event.domain}</strong> est
-              édité par&nbsp;: <Todo>[raison sociale à compléter]</Todo>.
+              édité par <strong className="text-brand">Alsace Protection
+              Sociale</strong>.
             </p>
             <p>
-              SIRET&nbsp;: <Todo>[numéro SIRET à compléter]</Todo> — Directeur de
-              la publication&nbsp;: <Todo>[nom à compléter]</Todo>.
+              Siège&nbsp;: 6 rue du Printemps, 67150 Erstein.
+              <br />
+              SIRET&nbsp;: 529 306 805 00027.
+            </p>
+            <p>
+              Directeur de la publication&nbsp;:{" "}
+              <Todo>[nom à compléter]</Todo>.
             </p>
             <p>
               Contact&nbsp;:{" "}
@@ -136,8 +142,18 @@ export default function MentionsLegales() {
 
           <Block accent={at(2)} title="Hébergement">
             <p>
-              Le site est hébergé par&nbsp;:{" "}
-              <Todo>[nom, adresse et téléphone de l&apos;hébergeur à compléter]</Todo>.
+              Le site est hébergé par <strong className="text-brand">Vercel
+              Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789,
+              États-Unis —{" "}
+              <a
+                href="https://vercel.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-magenta hover:underline"
+              >
+                vercel.com
+              </a>
+              .
             </p>
           </Block>
 
