@@ -13,11 +13,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
-/** Champ à compléter avant mise en ligne (signalé en italique gris). */
-function Todo({ children }: { children: React.ReactNode }) {
-  return <span className="italic text-muted">{children}</span>;
-}
-
 function Block({
   accent,
   title,
@@ -110,10 +105,7 @@ export default function MentionsLegales() {
               <br />
               SIRET&nbsp;: 529 306 805 00027.
             </p>
-            <p>
-              Directeur de la publication&nbsp;:{" "}
-              <Todo>[nom à compléter]</Todo>.
-            </p>
+            <p>Directeur de la publication&nbsp;: Sébastien Vonesch.</p>
             <p>
               Contact&nbsp;:{" "}
               <a
