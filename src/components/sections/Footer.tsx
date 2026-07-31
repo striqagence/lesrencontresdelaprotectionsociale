@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { event, cta, navLinks } from "@/content/event";
+import { partners } from "@/content/partners";
 
 /** Pied de page. */
 export default function Footer() {
@@ -43,6 +44,29 @@ export default function Footer() {
               Le rendez-vous annuel des acteurs de la protection sociale, de la
               retraite et de la prévoyance, en Alsace.
             </p>
+
+            {/* Partenaires */}
+            <div className="mt-7">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-turquoise-light">
+                Partenaires
+              </span>
+              <div className="mt-3 flex flex-wrap items-center gap-3">
+                {partners.map((partner) => (
+                  <div
+                    key={partner.logo}
+                    className="flex items-center rounded-[12px] bg-white px-3 py-2"
+                  >
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={partner.width}
+                      height={partner.height}
+                      style={{ height: 32, width: "auto" }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Colonnes de liens */}
