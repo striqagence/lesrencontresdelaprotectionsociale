@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { event, cta, navLinks } from "@/content/event";
-import { partners } from "@/content/partners";
+import { organizers } from "@/content/organizers";
 
 /** Pied de page. */
 export default function Footer() {
@@ -14,59 +14,45 @@ export default function Footer() {
         {/* Rangée haute */}
         <div className="flex flex-wrap items-start justify-between gap-12">
           {/* Colonne marque */}
-          <div className="max-w-[420px]">
-            <div className="mb-[22px] flex flex-wrap items-center gap-4">
-              <div className="rounded-[14px] bg-white px-5 py-4">
-                <Image
-                  src="/brand/logo-rencontres.png"
-                  alt={event.name}
-                  width={721}
-                  height={662}
-                  style={{ height: 84, width: "auto" }}
-                />
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-turquoise-light">
-                  Organisé par
-                </span>
-                <div className="rounded-[14px] bg-white px-[18px] py-[14px]">
-                  <Image
-                    src="/brand/alsace-protection-sociale.webp"
-                    alt="Alsace Protection Sociale"
-                    width={1360}
-                    height={513}
-                    style={{ height: 42, width: "auto" }}
-                  />
-                </div>
-              </div>
+          <div className="max-w-[480px]">
+            {/* Logo de l'événement */}
+            <div className="inline-flex rounded-[14px] bg-white px-5 py-4">
+              <Image
+                src="/brand/logo-rencontres.png"
+                alt={event.name}
+                width={721}
+                height={662}
+                style={{ height: 84, width: "auto" }}
+              />
             </div>
-            <p className="text-[18px] leading-[1.63] text-lavender">
-              Le rendez-vous annuel des acteurs de la protection sociale, de la
-              retraite et de la prévoyance, en Alsace.
-            </p>
 
-            {/* Partenaires */}
-            <div className="mt-7">
+            {/* Organisateurs */}
+            <div className="mt-6">
               <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-turquoise-light">
-                Partenaires
+                Organisé par
               </span>
               <div className="mt-3 flex flex-wrap items-center gap-3">
-                {partners.map((partner) => (
+                {organizers.map((org) => (
                   <div
-                    key={partner.logo}
+                    key={org.logo}
                     className="flex items-center rounded-[12px] bg-white px-3 py-2"
                   >
                     <Image
-                      src={partner.logo}
-                      alt={partner.name}
-                      width={partner.width}
-                      height={partner.height}
-                      style={{ height: 32, width: "auto" }}
+                      src={org.logo}
+                      alt={org.name}
+                      width={org.width}
+                      height={org.height}
+                      style={{ height: 34, width: "auto" }}
                     />
                   </div>
                 ))}
               </div>
             </div>
+
+            <p className="mt-6 text-[18px] leading-[1.63] text-lavender">
+              Le rendez-vous annuel des acteurs de la protection sociale, de la
+              retraite et de la prévoyance, en Alsace.
+            </p>
           </div>
 
           {/* Colonnes de liens */}
