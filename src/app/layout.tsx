@@ -24,8 +24,8 @@ const description =
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${event.domain}`),
   title: {
-    default: "Forum de la Protection Sociale — 1ᵉʳ octobre 2026, Strasbourg",
-    template: "%s · Forum de la Protection Sociale",
+    default: "Les Rencontres de la Protection Sociale",
+    template: "%s · Les Rencontres de la Protection Sociale",
   },
   description,
   keywords: [
