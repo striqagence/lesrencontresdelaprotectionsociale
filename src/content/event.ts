@@ -34,8 +34,7 @@ export const event = {
 
   // Liens externes / intégrations
   links: {
-    /** ⚠️ URL provisoire — remplacer par la billetterie Weezevent du client. */
-    tickets: "https://my.weezevent.com",
+    tickets: "https://my.weezevent.com/le-forum-de-la-protection-sociale",
     /** ⚠️ URL provisoire — remplacer par la page LinkedIn de l'événement. */
     linkedin: "https://www.linkedin.com",
     parking: "https://www.parcus.com/parkings/opera-broglie/#tarifs",
