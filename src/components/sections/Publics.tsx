@@ -27,9 +27,9 @@ export default function Publics() {
           <Eyebrow color="var(--color-violet)">
             À qui s&apos;adresse le Forum ?
           </Eyebrow>
-          <h2 className="mt-3 text-[clamp(30px,4.2vw,46px)] font-semibold leading-[1.15] text-brand">
-            Un rendez-vous pensé pour tout
-            <br />
+          <h2 className="mt-3 text-[clamp(26px,4.2vw,46px)] font-semibold leading-[1.15] text-brand">
+            Un rendez-vous pensé pour tout{" "}
+            <br className="hidden min-[560px]:inline" />
             l&apos;écosystème de la protection sociale
           </h2>
           <p className="mx-auto mt-5 max-w-[62ch] text-[21px] leading-[1.6] text-body">

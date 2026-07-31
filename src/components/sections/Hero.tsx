@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="relative mx-auto flex max-w-[1180px] flex-col items-center text-center">
         {/* Badge de titre */}
         <div
-          className="mb-[26px] inline-flex items-center gap-3 rounded-full border border-white/25 px-7 py-[14px]"
+          className="mb-[26px] inline-flex items-center gap-3 rounded-full border border-white/25 px-5 py-[12px] sm:px-7 sm:py-[14px]"
           style={{
             background: "#273582",
             boxShadow: "0 8px 22px -8px rgba(0,0,0,0.4)",
@@ -46,11 +46,11 @@ export default function Hero() {
         </div>
 
         {/* Titre principal — 3 lignes forcées */}
-        <h1 className="text-[clamp(40px,7vw,72px)] font-semibold leading-[1.08] tracking-[-0.01em] text-white">
-          Le rendez-vous alsacien
-          <br />
-          de la protection sociale
-          <br />
+        <h1 className="text-[clamp(32px,7vw,72px)] font-semibold leading-[1.08] tracking-[-0.01em] text-white">
+          Le rendez-vous alsacien{" "}
+          <br className="hidden min-[560px]:inline" />
+          de la protection sociale{" "}
+          <br className="hidden min-[560px]:inline" />
           et de la retraite
         </h1>
 

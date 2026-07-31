@@ -57,8 +57,12 @@ export default function Countdown() {
           </h2>
         </div>
 
-        {/* Bloc droite : 4 cartes */}
-        <div className="flex gap-[clamp(10px,1.4vw,20px)]" aria-live="polite">
+        {/* Bloc droite : 4 cartes — grille 2×2 sur mobile, rangée sur ≥560px */}
+        <div
+          className="grid w-full grid-cols-2 gap-3 min-[560px]:flex min-[560px]:w-auto
+                     min-[560px]:gap-[clamp(10px,1.4vw,20px)]"
+          aria-live="polite"
+        >
           {UNITS.map(({ key, label }) => (
             <div
               key={key}
