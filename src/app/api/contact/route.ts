@@ -1,14 +1,24 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
 /**
- * Réception du formulaire de contact.
+ * Réception du formulaire de contact → envoi d'e-mail via Resend.
  *
- * ⚠️ À COMPLÉTER AVANT MISE EN LIGNE :
- * pour l'instant, cette route valide les données et applique un honeypot
- * anti-spam, mais N'ENVOIE PAS encore d'e-mail. Brancher un fournisseur
- * (Resend / SendGrid / Postmark) là où c'est indiqué ci-dessous, avec la clé
- * API en variable d'environnement.
+ * Variables d'environnement :
+ *  - RESEND_API_KEY   (requis en prod) : clé API Resend
+ *  - CONTACT_TO       (optionnel)      : destinataire (défaut ci-dessous)
+ *  - CONTACT_FROM     (optionnel)      : expéditeur, sur un domaine vérifié
+ *                                        chez Resend (défaut ci-dessous)
+ *
+ * Si RESEND_API_KEY est absent (ex. environnement de dev sans clé), la route
+ * ne casse pas : elle valide, trace la demande et répond OK.
  */
+
+const TO = process.env.CONTACT_TO ?? "contact@alsaceprotectionsociale.fr";
+const FROM =
+  process.env.CONTACT_FROM ??
+  "Forum de la Protection Sociale <contact@rencontres-ps.fr>";
+
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
   try {
@@ -34,20 +44,42 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "validation" }, { status: 422 });
   }
 
-  // TODO(envoi) : envoyer l'e-mail via le fournisseur choisi, ex. :
-  //
-  //   import { Resend } from "resend";
-  //   const resend = new Resend(process.env.RESEND_API_KEY);
-  //   await resend.emails.send({
-  //     from: "Site <site@rencontres-ps.fr>",
-  //     to: "contact@alsaceprotectionsociale.fr",
-  //     replyTo: email,
-  //     subject: `Nouveau message de ${name}`,
-  //     text: `${message}\n\n— ${name} (${email})${organisation ? ` · ${organisation}` : ""}`,
-  //   });
-  //
-  // En attendant, on trace la demande côté serveur.
-  console.info("[contact] nouvelle demande", { name, email, organisation });
+  const apiKey = process.env.RESEND_API_KEY;
+
+  // Pas de clé (dev) : on trace et on répond OK sans envoyer.
+  if (!apiKey) {
+    console.warn(
+      "[contact] RESEND_API_KEY absent — e-mail non envoyé. Demande :",
+      { name, email, organisation },
+    );
+    return NextResponse.json({ ok: true });
+  }
+
+  const textBody =
+    `Nouveau message depuis le site du Forum de la Protection Sociale.\n\n` +
+    `Nom : ${name}\n` +
+    `E-mail : ${email}\n` +
+    (organisation ? `Structure : ${organisation}\n` : "") +
+    `\nMessage :\n${message}\n`;
+
+  try {
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from: FROM,
+      to: TO,
+      replyTo: email,
+      subject: `Contact site — ${name}`,
+      text: textBody,
+    });
+
+    if (error) {
+      console.error("[contact] échec d'envoi Resend :", error);
+      return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 });
+    }
+  } catch (err) {
+    console.error("[contact] exception Resend :", err);
+    return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 });
+  }
 
   return NextResponse.json({ ok: true });
 }
