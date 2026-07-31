@@ -74,7 +74,7 @@ export default function Programme() {
                   {!isLast && (
                     <span
                       aria-hidden="true"
-                      className="absolute left-[13px] top-[18px] w-[2px]"
+                      className="tl-line absolute left-[13px] top-[18px] w-[2px]"
                       style={{
                         bottom: -26,
                         background: "linear-gradient(180deg, #00A3BF, #735092)",
@@ -83,7 +83,7 @@ export default function Programme() {
                   )}
                   <span
                     aria-hidden="true"
-                    className="absolute left-1/2 top-[7px] z-[1] h-[14px] w-[14px] -translate-x-1/2 rotate-45 rounded-[2px] bg-white"
+                    className="tl-dot absolute left-1/2 top-[7px] z-[1] h-[14px] w-[14px] rounded-[2px] bg-white"
                     style={{ border: "3px solid #c02a87" }}
                   />
                 </div>

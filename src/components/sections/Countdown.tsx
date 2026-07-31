@@ -66,10 +66,12 @@ export default function Countdown() {
               style={{ background: "rgba(255,255,255,0.08)" }}
             >
               <div
-                className="text-[clamp(36px,4vw,54px)] font-light leading-none tabular-nums"
+                className="overflow-hidden text-[clamp(36px,4vw,54px)] font-light leading-none tabular-nums"
                 style={{ color: key === "secs" ? "#c02a87" : "#ffffff" }}
               >
-                {time ? time[key] : "--"}
+                <span key={time ? time[key] : "--"} className="cd-tick">
+                  {time ? time[key] : "--"}
+                </span>
               </div>
               <div className="mt-2 text-[13px] font-semibold uppercase tracking-[0.16em] text-lavender">
                 {label}

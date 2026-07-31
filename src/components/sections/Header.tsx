@@ -82,9 +82,11 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="border-b-2 border-transparent pb-[3px] text-[15px] font-semibold uppercase
-                         tracking-[0.09em] text-brand transition-[color,border-color] duration-150
-                         hover:border-magenta hover:text-magenta
+              className="relative pb-[3px] text-[15px] font-semibold uppercase tracking-[0.09em]
+                         text-brand transition-colors duration-150 hover:text-magenta
+                         after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full
+                         after:origin-left after:scale-x-0 after:bg-magenta
+                         after:transition-transform after:duration-200 hover:after:scale-x-100
                          max-[600px]:text-[16px] max-[440px]:text-[15px]"
             >
               {link.label}
@@ -98,8 +100,8 @@ export default function Header() {
             href={event.links.tickets}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full bg-magenta px-6 py-3 text-[15px] font-bold
-                       uppercase tracking-[0.06em] leading-none text-white
+            className="cta-shine inline-flex items-center rounded-full bg-magenta px-6 py-3 text-[15px]
+                       font-bold uppercase tracking-[0.06em] leading-none text-white
                        shadow-[0_6px_18px_rgba(193,42,135,0.28)]
                        transition-[transform,box-shadow] duration-200
                        hover:-translate-y-px hover:shadow-[0_10px_24px_rgba(193,42,135,0.38)]"

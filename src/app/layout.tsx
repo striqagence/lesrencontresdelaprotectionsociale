@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import { event } from "@/content/event";
+import ScrollProgress from "@/components/ScrollProgress";
 
 /**
  * Police unique de la charte : Roboto Condensed (Google Fonts).
@@ -68,7 +69,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" className={robotoCondensed.variable}>
-      <body>{children}</body>
+      <body>
+        <ScrollProgress />
+        {children}
+      </body>
     </html>
   );
 }

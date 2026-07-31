@@ -8,10 +8,10 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden
+      className="gradient-drift relative overflow-hidden
                  px-[clamp(20px,5vw,64px)] pb-[clamp(40px,5vw,72px)] pt-[clamp(56px,8vw,104px)]"
       style={{
-        background:
+        backgroundImage:
           "linear-gradient(135deg, #C02A87 0%, #8E2F86 50%, #273582 100%)",
       }}
     >

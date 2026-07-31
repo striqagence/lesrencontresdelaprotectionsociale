@@ -39,7 +39,7 @@ export default function CtaButton({
   className = "",
 }: CtaButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full " +
+    "cta-shine inline-flex items-center justify-center gap-2 rounded-full " +
     "px-8 py-[17px] text-[17px] font-semibold leading-none " +
     "transition-[transform,box-shadow,background-color,border-color] duration-200 " +
     "cursor-pointer whitespace-nowrap";

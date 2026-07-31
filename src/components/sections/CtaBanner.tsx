@@ -7,10 +7,10 @@ export default function CtaBanner() {
   return (
     <section className="px-[clamp(20px,5vw,64px)] py-[clamp(20px,4vw,48px)]">
       <div
-        className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[24px]
+        className="gradient-drift relative mx-auto max-w-[1180px] overflow-hidden rounded-[24px]
                    px-[clamp(24px,5vw,56px)] py-[clamp(44px,6vw,72px)] text-center"
         style={{
-          background:
+          backgroundImage:
             "linear-gradient(110deg, #C02A87 0%, #8E2F86 50%, #273582 100%)",
           boxShadow: "0 30px 70px -36px rgba(39,53,130,0.6)",
         }}
