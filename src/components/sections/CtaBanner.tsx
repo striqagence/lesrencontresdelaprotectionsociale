@@ -35,8 +35,8 @@ export default function CtaBanner() {
           <Image
             src="/brand/logo-rencontres.png"
             alt=""
-            width={721}
-            height={662}
+            width={395}
+            height={404}
             aria-hidden="true"
             style={{ height: 84, width: "auto" }}
           />

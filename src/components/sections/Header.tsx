@@ -82,8 +82,8 @@ export default function Header() {
           <Image
             src="/brand/logo-rencontres.png"
             alt={event.name}
-            width={721}
-            height={662}
+            width={395}
+            height={404}
             priority
             style={{
               height: compact ? 56 : 96,

@@ -52,8 +52,8 @@ export default function MentionsLegales() {
           <Image
             src="/brand/logo-rencontres.png"
             alt={event.name}
-            width={721}
-            height={662}
+            width={395}
+            height={404}
             priority
             style={{ height: 78, width: "auto" }}
           />

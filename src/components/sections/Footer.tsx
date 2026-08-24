@@ -20,8 +20,8 @@ export default function Footer() {
               <Image
                 src="/brand/logo-rencontres.png"
                 alt={event.name}
-                width={721}
-                height={662}
+                width={395}
+                height={404}
                 style={{ height: 84, width: "auto" }}
               />
             </div>

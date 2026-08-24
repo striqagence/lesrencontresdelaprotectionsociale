@@ -50,8 +50,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/banniere-rencontres.png",
-        width: 1496,
-        height: 565,
+        width: 640,
+        height: 242,
         alt: "Forum de la Protection Sociale — 1ᵉʳ octobre 2026, Strasbourg",
       },
     ],
