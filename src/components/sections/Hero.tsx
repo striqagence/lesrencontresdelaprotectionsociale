@@ -68,8 +68,8 @@ export default function Hero() {
           <Image
             src="/images/banniere-rencontres.png"
             alt="Forum de la Protection Sociale — 1ᵉʳ octobre 2026, Villa Quai Sturm, Strasbourg"
-            width={1496}
-            height={565}
+            width={3118}
+            height={1181}
             priority
             sizes="(max-width: 1240px) 100vw, 1180px"
             className="block h-auto w-full"
