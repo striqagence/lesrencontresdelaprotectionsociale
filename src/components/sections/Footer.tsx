@@ -1,7 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
 import { event, cta, navLinks } from "@/content/event";
-import { organizers } from "@/content/organizers";
+import { organizers, type Organizer } from "@/content/organizers";
+import { sponsors } from "@/content/sponsors";
+
+/** Rangée de logos sur pastilles blanches (modèle « Organisé par »). */
+function LogoRow({ label, items }: { label: string; items: Organizer[] }) {
+  return (
+    <div className="mt-6">
+      <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-turquoise-light">
+        {label}
+      </span>
+      <div className="mt-3 flex flex-wrap items-center gap-3">
+        {items.map((item) => (
+          <div
+            key={item.logo}
+            className="flex items-center rounded-[12px] bg-white px-3 py-2"
+          >
+            <Image
+              src={item.logo}
+              alt={item.name}
+              width={item.width}
+              height={item.height}
+              style={{ height: 34, width: "auto" }}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 /** Pied de page. */
 export default function Footer() {
@@ -26,28 +54,9 @@ export default function Footer() {
               />
             </div>
 
-            {/* Organisateurs */}
-            <div className="mt-6">
-              <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-turquoise-light">
-                Organisé par
-              </span>
-              <div className="mt-3 flex flex-wrap items-center gap-3">
-                {organizers.map((org) => (
-                  <div
-                    key={org.logo}
-                    className="flex items-center rounded-[12px] bg-white px-3 py-2"
-                  >
-                    <Image
-                      src={org.logo}
-                      alt={org.name}
-                      width={org.width}
-                      height={org.height}
-                      style={{ height: 34, width: "auto" }}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+            {/* Organisateurs & sponsors */}
+            <LogoRow label="Organisé par" items={organizers} />
+            <LogoRow label="Sponsorisé par" items={sponsors} />
 
             <p className="mt-6 text-[18px] leading-[1.63] text-lavender">
               Le rendez-vous annuel des acteurs de la protection sociale, de la
