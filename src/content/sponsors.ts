@@ -31,7 +31,7 @@ export const sponsors: Sponsor[] = [
   {
     name: "Entoria",
     logo: "/brand/sponsors/entoria.png",
-    width: 356,
-    height: 95,
+    width: 640,
+    height: 147,
   },
 ];
