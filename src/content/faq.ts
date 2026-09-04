@@ -8,7 +8,7 @@ export type FaqItem = { q: string; a: string };
 
 export const faq: FaqItem[] = [
   {
-    q: "À qui s'adresse le Forum ?",
+    q: "À qui s'adresse cette journée ?",
     a: "Aux professionnels du conseil (experts-comptables, avocats, notaires, courtiers, conseillers en protection sociale), aux institutions (URSSAF, CCI, Chambre des Métiers, caisses de retraite, organismes sociaux, organisations patronales).",
   },
   {

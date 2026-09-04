@@ -10,7 +10,7 @@ const TAG_TEXT: Record<Extract<AccentKey, "turquoise" | "violet">, string> = {
   violet: "#5a3d73",
 };
 
-/** Section « À qui s'adresse le Forum » — 2 publics cibles. */
+/** Section « À qui s'adresse cette journée » — 2 publics cibles. */
 export default function Publics() {
   return (
     <section
@@ -25,7 +25,7 @@ export default function Publics() {
         {/* En-tête */}
         <div className="mb-14 text-center">
           <Eyebrow color="var(--color-violet)">
-            À qui s&apos;adresse le Forum ?
+            À qui s&apos;adresse cette journée ?
           </Eyebrow>
           <h2 className="mt-3 text-[clamp(26px,4.2vw,46px)] font-semibold leading-[1.15] text-brand">
             Un rendez-vous pensé pour tout{" "}
