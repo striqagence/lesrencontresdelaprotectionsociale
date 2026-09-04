@@ -82,7 +82,7 @@ export default function Pourquoi() {
           {/* Colonne gauche */}
           <div className="min-w-[320px] flex-[1.05]">
             <Eyebrow color="var(--color-violet)">
-              Le Forum, c&apos;est avant tout…
+              Les Rencontres de la Protection Sociale, c&apos;est avant tout…
             </Eyebrow>
             <h3 className="mb-[30px] mt-3 text-[clamp(28px,3vw,36px)] font-semibold leading-[1.3] text-brand">
               4 raisons d&apos;être au rendez-vous
