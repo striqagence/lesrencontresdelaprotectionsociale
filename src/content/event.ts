@@ -52,7 +52,7 @@ export const cta = {
 
 /** Liens de navigation (header + footer). */
 export const navLinks = [
-  { label: "Le Forum", href: "#pourquoi" },
+  { label: "Les Rencontres", href: "#pourquoi" },
   { label: "Pour qui", href: "#publics" },
   { label: "Programme", href: "#programme" },
   { label: "Infos pratiques", href: "#infos" },
