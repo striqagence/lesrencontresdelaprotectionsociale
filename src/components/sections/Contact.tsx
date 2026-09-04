@@ -61,7 +61,7 @@ export default function Contact() {
             Contact
           </Eyebrow>
           <h2 className="mb-[18px] mt-3 text-[clamp(28px,3.2vw,34px)] font-semibold leading-[1.25]">
-            Une question sur le Forum ?
+            Une question sur les Rencontres de la Protection Sociale ?
           </h2>
           <p className="mb-8 text-[18px] leading-[1.63] text-lavender">
             Notre équipe vous répond sur l&apos;événement, les inscriptions ou le
