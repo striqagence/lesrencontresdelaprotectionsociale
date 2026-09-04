@@ -47,7 +47,7 @@ export default function CtaBanner() {
           <h2 className="text-[clamp(28px,4.2vw,48px)] font-semibold leading-[1.15] text-white">
             Prêts à rejoindre{" "}
             <br className="hidden min-[560px]:inline" />
-            le Forum de la Protection Sociale ?
+            les Rencontres de la Protection Sociale ?
           </h2>
           <p className="mx-auto mt-4 max-w-[54ch] text-[clamp(15px,1.3vw,17px)] leading-[1.6] text-white/85">
             Réservez votre place pour le{" "}
