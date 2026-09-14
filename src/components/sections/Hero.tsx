@@ -47,7 +47,7 @@ export default function Hero() {
 
         {/* Titre principal — 3 lignes forcées */}
         <h1 className="text-[clamp(32px,7vw,72px)] font-semibold leading-[1.08] tracking-[-0.01em] text-white">
-          Le rendez-vous alsacien{" "}
+          Le rendez-vous Alsacien{" "}
           <br className="hidden min-[560px]:inline" />
           de la protection sociale{" "}
           <br className="hidden min-[560px]:inline" />
