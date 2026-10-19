@@ -1,5 +1,6 @@
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
+import Retour from "@/components/sections/Retour";
 import Countdown from "@/components/sections/Countdown";
 import Pourquoi from "@/components/sections/Pourquoi";
 import Publics from "@/components/sections/Publics";
@@ -55,6 +56,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Retour />
         <Countdown />
         <Pourquoi />
         <Publics />

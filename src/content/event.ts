@@ -40,6 +40,19 @@ export const event = {
     parking: "https://www.parcus.com/parkings/opera-broglie/#tarifs",
     agency: "https://www.striq.fr",
   },
+
+  /**
+   * Vidéo « retour en images » (1ʳᵉ édition).
+   * Hébergée sur Vercel Blob (trop lourde pour le repo). Poster dans public/.
+   * ⚠️ Payload : deviendra un champ média du global « Événement ».
+   */
+  recap: {
+    videoUrl:
+      "https://ar1klokrudvasveo.public.blob.vercel-storage.com/retour-rencontres-ps.mp4",
+    poster: "/images/retour-poster.jpg",
+    /** Durée ISO 8601 pour le JSON-LD VideoObject (2 min 17 s). */
+    durationISO: "PT2M17S",
+  },
 } as const;
 
 /** Libellés des CTA réutilisés partout. */
